@@ -1,0 +1,38 @@
+<div [ngClass]="game.hidden?'container-hidden':'container-displayed'">
+  <div class="left-container">
+    <div class="name">
+      {{game.name}}    <br>
+    </div>
+
+
+
+
+    <div class="other-info">
+      Pegi <b>{{game.pegi}}</b>, of <b>{{game.genre}}</b> genre for <b>{{game.platform}}</b><br>
+      Developed by <b>{{game.developer}}</b> and published by <b>{{game.publisher}}</b> <br>      It is yours only for <b>{{game.price}}$</b> but you need to be quick because there are only <b>{{game.quantity}}</b> copies left.
+      </div>
+    <div class="description">
+      {{game.description}}
+    </div>
+  </div>
+  <div class="operations">
+    <button  [disabled]="!newQuantityCart.length" *ngIf="parent=='games' &&  isLogged && game.quantity>0 && roles.includes('user-role') && !roles.includes('admin-role')" (click)="addToTheCart()" >Add to the cart</button>
+    <input *ngIf="parent=='games' &&  isLogged && game.quantity>0 && roles.includes('user-role') && !roles.includes('admin-role')" type="text" id="txtNewQuantityCart" placeholder="Insert new Quantity"  [(ngModel)]="newQuantityCart" name="newQuantityCart">
+    <br>
+    <button  *ngIf="parent=='games' && isLogged && game.quantity==0 && roles.includes('user-role') && !roles.includes('admin-role')" [disabled]="!bookQuantity.length" (click)="bookGame()" >Book</button>
+
+    <input *ngIf="parent=='games' && isLogged && game.quantity==0 && roles.includes('user-role') && !roles.includes('admin-role')" type="text" id="txtBookQuantity" placeholder="Insert quantity"  [(ngModel)]="bookQuantity" name="bookQuantity">
+
+
+    <button *ngIf="parent=='games' && isLogged  && roles.includes('admin-role')" [disabled]="!newQuantityUpdate.length" (click)="updateQuantity()" >Update quantity</button>
+    <input *ngIf="parent=='games' && isLogged && roles.includes('admin-role')" type="text" id="txtNewQuantityUpdate" placeholder="Insert new Quantity"  [(ngModel)]="newQuantityUpdate" name="newQuantityUpdate">
+    <br>
+
+    <button *ngIf="parent=='games' && isLogged &&  roles.includes('admin-role')" [disabled]="!newPrice.length" (click)="updatePrice()">Update price</button>
+    <input *ngIf="parent=='games' && isLogged && roles.includes('admin-role')" type="text" id="txtPrice" placeholder="Insert new Price"  [(ngModel)]="newPrice" name="newPrice">
+    <br>
+
+    <button  *ngIf="parent=='games' && isLogged && roles.includes('admin-role') && game.hidden" (click)="displayGame()">Display</button>
+    <button  *ngIf="parent=='games' && isLogged && roles.includes('admin-role') && !game.hidden" (click)="hideGame()">Hide</button><br>
+  </div>
+</div>

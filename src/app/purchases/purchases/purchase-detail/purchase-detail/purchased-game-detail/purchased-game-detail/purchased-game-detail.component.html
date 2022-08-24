@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="name-id">
+      ID: {{pg.id}}<br>
+      {{pg.name}}
+    </div>
+
+
+
+
+    <div class="other-info">
+      <p *ngIf="pg.boughtByBooking">It was bought by booking.</p>
+      <p *ngIf="!pg.boughtByBooking">It was bought by the cart.</p>
+      Pegi <b>{{pg.pegi}}</b>, of <b>{{pg.genre}}</b> genre for <b>{{pg.platform}}</b><br>
+      Developed by <b>{{pg.developer}}</b> and published by <b>{{pg.publisher}}</b> <br>
+      It has costed <b>{{pg.price}}$</b> and you bought <b>{{pg.quantity}}</b> copies.
+    </div>
+    <div class="description">
+      {{pg.description}}
+    </div>
+
+</div>

@@ -1,0 +1,17 @@
+
+<div class="container">
+
+  <div class="form-section">
+    <app-games-form (inserted)="insertGame($event)" ></app-games-form>
+
+  </div>
+
+  <div class="results-section">
+    <ul>
+      <li *ngFor="let g of games">
+        <app-game-detail [parent]="'addGame' " [game] = 'g' > </app-game-detail>
+      </li>
+    </ul>
+  </div>
+</div>
+

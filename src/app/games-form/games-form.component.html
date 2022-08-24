@@ -1,0 +1,42 @@
+<form #myForm="ngForm">
+
+  <div class="row-search">
+    <input type="text" id="txtNome" placeholder="Insert name"  [(ngModel)]="model.name" name="nome">
+  </div>
+  <div class="row-search">
+    <input type="text" id="txtPublisher" placeholder="Insert publisher"  [(ngModel)]="model.publisher" name="publisher">
+  </div>
+  <div class="row-search">
+    <input type="text" id="txtDeveloper" placeholder="Insert developer"  [(ngModel)]="model.developer" name="developer">
+  </div>
+  <div class="row-search">
+    <input type="text" id="txtPegi" placeholder="Insert pegi"  [(ngModel)]="model.pegi" name="pegi">
+  </div>
+  <div class="row-search">
+    <input type="text" id="txtPiattaforma" placeholder="Insert platform"  [(ngModel)]="model.platform" name="platform">
+  </div>
+  <div class="row-search">
+    <input type="text" id="txtGenere" placeholder="Insert genre"  [(ngModel)]="model.genre" name="genre">
+  </div>
+  <div *ngIf="currentPath=='/AddGame'" class="row-search">
+    <input type="text" id="txtDescription" placeholder="Insert description"  [(ngModel)]="model.description" name="description">
+  </div>
+  <div *ngIf="currentPath=='/Games'" class="row-search">
+    <input *ngIf="currentPath=='/Games'" type="text" id="txtPrezzoMin" placeholder="Insert min price" [(ngModel)]="model.prezzoMin" name="prezzoMin">
+  </div>
+  <div *ngIf="currentPath=='/Games'" class="row-search">
+    <input type="text" id="txtPrezzoMax" placeholder="Insert max price" [(ngModel)]="model.prezzoMax" name="prezzoMax">
+  </div>
+  <div *ngIf="currentPath=='/AddGame'" class="row-search">
+    <input type="text" id="Price" placeholder="Insert price" [(ngModel)]="model.price" name="price">
+  </div>
+  <div  class="row-search">
+    <input type="text" id="txtQuantity" placeholder="Insert quantity" [(ngModel)]="model.quantity" name="quantity">
+  </div>
+  <div class="row-search">
+    <button *ngIf="currentPath=='/Games'" (click)="searchGame()" >Search</button>
+    <button *ngIf="currentPath=='/AddGame'" (click)="sendGame()" >Insert</button>
+
+    <button type="button" (click)="resetUserForm()" >Reset</button>
+  </div>
+  </form>

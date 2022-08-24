@@ -1,0 +1,28 @@
+<div class="container">
+
+  <div class="summary-section">
+
+    You can empty your cart by clicking on the 'Empty cart' button.
+    <br><br>
+    If you want to add a purchase, then you must check the cart by clicking on the 'Check purchase' button.
+    After that, you can add your purchase by clicking on the 'Add purchase' button.
+    <br><br><br><br><br>
+    <p>SUMMARY:</p>
+    You have inserted in the cart <b>{{gics.length}}</b> games for a total of <b>{{totalCopies}}</b> copies.<br>
+    The total price is <b>{{totalPrice}}$</b>.
+
+    <div class="button-container">
+      <button  [disabled]="!checked || !allGicsValid" (click)="addPurchase()">Add purchase</button>
+      <button  (click)="operationsToDoOnRefresh()">Check purchase</button> <br>
+      <button (click)="emptyCart()" >Empty cart</button><br>
+    </div>
+  </div>
+
+  <div class="gics-section">
+      <ul>
+        <li *ngFor="let g of gics">
+          <app-gic-detail  [gic] = 'g'  (refresh)="refresh($event)" (refresh)="refresh($event)" > </app-gic-detail>
+        </li>
+      </ul>
+  </div>
+</div>

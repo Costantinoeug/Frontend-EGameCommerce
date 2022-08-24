@@ -1,0 +1,64 @@
+
+.container{
+  display: flex;
+  justify-content: left;
+  background-color: white;
+  height: 613px;
+}
+
+.bookings-section{
+  overflow: auto;
+  width: 1400px;
+  background-color: white;;
+}
+.summary-section{
+  box-sizing: border-box;
+  width: 280px;
+  overflow: auto;
+  text-align: justify;
+  color: white;
+  font-size: 13px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 40PX;
+  background-color:#2f6690;
+}
+
+
+.summary-section p{
+  box-sizing: border-box;
+  color: white;
+  font-weight:500;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+

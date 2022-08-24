@@ -1,0 +1,23 @@
+<div  class="container" >
+  <div class="left-container">
+    <div class="name-id">
+    ID: {{booking.id}}
+    <br>{{booking.name}}    <br>
+    </div>
+
+
+
+    <div class="other-info">
+      You booked <b>{{booking.quantity}}</b> copies of the game, for a price of <b>{{booking.price}}$</b> for unit.<br>
+    </div>
+
+
+
+</div>
+<div class="operations">
+  <button  [disabled]="!newQuantity.length" (click)="updateQuantity()">Update quantity</button>
+  <input  type="text" id="txtNewQuantity" placeholder="Insert new quantity"  [(ngModel)]="newQuantity" name="newQuantity">
+  <br>
+  <button id="removebutton"  (click)="unbook()" >Unbook</button>
+</div>
+</div>

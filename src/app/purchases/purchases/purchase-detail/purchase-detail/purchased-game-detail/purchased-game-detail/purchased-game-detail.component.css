@@ -1,0 +1,59 @@
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+.container{
+  border-radius: 10px;
+  padding: 10px;
+  padding-left: 20px;
+  overflow: auto;
+  height: auto;
+  background-color:#96cee1;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+.name-id{
+  padding-left: 10px;
+  height: 30px;
+  padding-top: 6px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 650;
+  color: #16425b;
+  margin-bottom: 15px;
+}
+p{
+  margin: 0;
+}
+
+.other-info{
+  padding-left: 10px;
+  color: #2f6690;
+  margin: 0px;
+  clear: both;
+  text-align: justify;
+}
+
+.description{
+  text-align: justify;
+  color: #648FAF;
+  padding-left: 10px;
+  font-style: italic;
+  margin-bottom: 20px;
+}

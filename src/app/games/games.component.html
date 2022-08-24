@@ -1,0 +1,15 @@
+<div class="container">
+
+  <div class="form-section">
+    <app-games-form (searched)="searchGame($event)"></app-games-form>
+
+  </div>
+
+  <div class="results-section">
+      <ul>
+        <li *ngFor="let g of games">
+          <app-game-detail [parent]="'games'" [game] = 'g' [isLogged]="isLogged" [roles]="roles" [user]="user"> </app-game-detail>
+        </li>
+      </ul>
+  </div>
+</div>

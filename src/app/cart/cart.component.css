@@ -1,0 +1,83 @@
+
+.container{
+  display: flex;
+  justify-content: left;
+  background-color: white;
+  height: 613px;
+}
+
+.gics-section{
+  overflow: auto;
+  width: 1400px;
+  background-color: white;;
+}
+.summary-section{
+  box-sizing: border-box;
+  width: 280px;;
+  overflow: auto;
+  text-align: justify;
+  color: white;
+  font-size: 13px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 40PX;
+  background-color:#2f6690;
+}
+
+
+.summary-section p{
+  color: white;
+  font-weight:500;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.button-container{
+  margin-top: 140px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+button{
+  cursor: pointer;
+  margin: 3px;
+  width: 100px;
+  height: 30px;
+  font-size: 11px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: #2f6690;
+}
+button:hover:enabled{
+  background-color: #2f6690;
+  color: white;
+  border: 1px solid white;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

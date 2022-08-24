@@ -1,0 +1,29 @@
+
+<div class="toolbar">
+  <div class="logo">
+    EGameCommerce<br>
+    <p class="p-welcome">
+      Welcome {{user}}
+    </p>
+  </div>
+  <div class="log-inout-container">
+      <button *ngIf="!isLogged" (click)="login()">Login</button>
+      <button *ngIf="isLogged" (click)="logout()">Logout</button>
+
+  </div>
+</div>
+
+<div class="navbar">
+  <a                                [ngClass]="{'active': activeComponent === 'Games'}"      (click)="handleNavigation('Games')">Games</a>
+  <a *ngIf="roles.includes('user-role') && !roles.includes('admin-role')"  [ngClass]="{'active': activeComponent === 'Bookings'}"   (click)="handleNavigation('Bookings')">Bookings</a>
+  <a *ngIf="roles.includes('user-role') && !roles.includes('admin-role') "  [ngClass]="{'active': activeComponent === 'Cart'}"       (click)="handleNavigation('Cart')">Cart</a>
+  <a *ngIf="roles.includes('user-role') && !roles.includes('admin-role')"  [ngClass]="{'active': activeComponent === 'Purchases'}"   (click)="handleNavigation('Purchases')">Purchases</a>
+  <a *ngIf=" roles.includes('admin-role')" [ngClass]="{'active': activeComponent === 'AddGame'}"    (click)="handleNavigation('AddGame')">AddGame</a>
+</div>
+<div class="router-container">
+  <router-outlet></router-outlet>
+</div>
+
+
+
+

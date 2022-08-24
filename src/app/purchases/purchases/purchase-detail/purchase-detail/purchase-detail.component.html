@@ -1,0 +1,17 @@
+<div  class="container" >
+    <div class="name-id">
+
+      ID: {{purchase.id}}
+    </div>
+    <div class="other-info">
+      This purchase has <b>{{totalGames}}</b> games for a total of <b>{{totalCopies}}</b> copies.<br>
+      It has costed <b>{{purchase.price}}</b>
+    </div>
+  <div class="container-pgs">
+    <ul>
+      <li *ngFor="let pg of purchase.pgs" >
+        <app-purchased-game-detail  [pg] = 'pg' > </app-purchased-game-detail>
+      </li>
+    </ul>
+  </div>
+</div>

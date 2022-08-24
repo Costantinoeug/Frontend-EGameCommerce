@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="summary-section">
+
+    <br><br>
+    You can remove a booking by clicking on the relative button.<br>
+    You can change the quantity of copies of the game that you have booked: just click on the relative button!
+    <br><br><br><br><br>
+    <p>SUMMARY:</p>
+    You have booked <b>{{bookings.length}}</b> games for a total of <b>{{totalCopies}}</b> copies.<br>
+    The total price is <b>{{totalPrice}}$</b>.
+
+
+  </div>
+  <div class="bookings-section">
+      <ul>
+        <li *ngFor="let b of bookings" >
+          <app-booking-detail  [booking] = 'b' (updated)="refresh($event)"> </app-booking-detail>
+        </li>
+      </ul>
+  </div>
+</div>

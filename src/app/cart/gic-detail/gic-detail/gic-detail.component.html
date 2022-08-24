@@ -1,0 +1,29 @@
+<div [ngClass]="gic.valid?'container-valid':'container-not-valid'" class="container">
+  <div class="left-container">
+    <div class="name-id">
+      ID: {{gic.id}}<br>
+      {{gic.gameName}}    <br>
+    </div>
+
+
+
+
+    <div class="other-info">
+      You added to the cart <b>{{gic.quantityRequested}}</b> copies of this game.<br>
+      There are only <b>{{gic.quantityAvailable}}</b> copies of this Game.<br>
+      Each one costs <b>{{gic.price}}$</b>.<br>
+      You can remove from the cart all the copies of the game by clicking on the remove button.<br>
+      You can change the quantity of the copies of the game that you want to buy by clicking on the update quantity button.
+      <b><p *ngIf="!gic.valid">BEWARE: THE NUMBER OF COPIES YOU WANT TO BUY ARE MORE THAN THOSE AVAILABLE!<br>
+                  IF YOU WANT TO COMPLETE THE PURCHASE THEN YOU MUST CHOOSE A NUMBER OF COPIES THAT IS VALID!</p></b>
+
+    </div>
+  </div>
+  <div class="operations">
+
+    <button  [disabled]="!newQuantity.length" (click)="updateQuantity()">Update quantity</button>
+    <input  type="text" id="txtNewQuantity" placeholder="Insert new quantity"  [(ngModel)]="newQuantity" name="newQuantity">
+    <br>
+    <button (click)="removeFromTheCart()" >Remove</button><br>
+  </div>
+</div>

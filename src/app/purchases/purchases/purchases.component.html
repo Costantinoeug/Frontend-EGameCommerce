@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="summary-section">
+
+    <br><br>
+    <br><br><br><br><br>
+    <p>SUMMARY:</p>
+    You made <b>{{purchases.length}}</b> purchases for a total of <b>{{totalCopies}}</b> copies.<br>
+    The total price is <b>{{totalPrice}}$</b>.
+
+
+  </div>
+  <div class="purchase-section">
+      <ul>
+        <li *ngFor="let p of purchases" >
+          <app-purchase-detail  [purchase] = 'p' > </app-purchase-detail>
+        </li>
+      </ul>
+  </div>
+</div>
